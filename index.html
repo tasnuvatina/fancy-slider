@@ -1,8 +1,7 @@
 <!doctype html>
 <html lang="en">
-
+<!-- head -->
 <head>
-  <title>Title</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,31 +11,79 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
     integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+<link rel="icon" href="images/favicon2.ico">
+<title>PixyBear</title>
 </head>
 
+<!-- body -->
 <body>
+  <!-- navigation section -->
+  <section id="header-section" class="container">
+    <div id="header-div">
+        <div>
+            <img src="images/bear.png" alt="" >
+            <h3>PixyBear</h3>
+        </div>
+        <div id="navigation-div">
+            <ul id="nav-ul">
+                <li id="dropdown-menu"><a href="#menu"><strong>Menu</strong></a></li>
+                <li class="nav-li"><a href="#news">News</a></li>
+                <li class="nav-li"><a href="#contact">Contact</a></li>
+                <li class="nav-li"><a href="#about">About</a></li>
+                <li class="nav-li"><a class="active" href="#home">Home</a></li>
+                
+            </ul>
+        </div>
+    </div>
+</section>
   <div class="container">
-    <h4 class="mt-2 text-center">Search Image for create slider</h4>
+    <h2 class=" mt-4 text-center">Search Image To Create Slider</h2>
+
+    <!-- search image div -->
     <div class="form-inline mt-3 d-flex justify-content-center">
       <div class="input-group col-md-6 mb-2">
-        <input type="text" class="form-control" id="search" placeholder="nature">
+        <input type="text" class="form-control" id="search" placeholder="nature" value="Images">
       </div>
-      <button type="button" id="search-btn" class="btn btn-primary mb-2">Search</button>
+      <button type="button" id="search-btn" class="btn mb-2 brown">Search</button>
     </div>
-    <section class="images">
-      <div class="justify-content-around align-items-center mt-3 gallery-header mb-2">
-        <h3 class="head-title text-center">Select image for create slider</h3>
-        <div class="input-group col-md-3 mb-2 mb-md-0">
-          <input class="form-control" id="doration" placeholder="slider change duration">
-        </div>
-        <button id="create-slider" class="btn btn-primary px-5">Create slider</button>
-      </div>
-      <div class="row gallery">
 
+    <!-- spinner div -->
+    <div class="d-flex justify-content-center mt-4 ">
+      <div id="spinner"  class="spinner-border d-none text-brown" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+    <!-- error alert div--->
+    <div id="error-alert-div" class="">
+      <div id="error-div">
+        <img src="images/sorry.png" alt="">
+        <button id="error-button" class="btn mt-2 px-4 brown">OK</button>
+      </div>
+    </div>
+    
+    <!-- gallary section -->
+    <section class="images mt-4">
+      <div class="justify-content-around align-items-center mt-3    gallery-header mb-2">
+        <h3 class="text-center">Search result for <span id="head-title"></span>: <span id="selected-img-number">0</span>/<span id="total-img-number">20</span></h3>
+        <div class="input-group col-md-3 mb-2 mb-md-0">
+          <input class="form-control" id="duration" placeholder="slider change duration">
+        </div>
+        <button id="create-slider" class="btn px-5 brown">Create slider</button>
+        
+      </div>
+      <!-- gallary div -->
+      <div class="row gallery mt-4">
+        
       </div>
     </section>
-    <!-- slider -->
+
+    <!-- slider div -->
     <div class="main">
       <section class="mt-5" id="sliders">
 
