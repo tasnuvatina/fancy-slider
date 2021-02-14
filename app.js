@@ -58,12 +58,10 @@ const getImages = (query) => {
   fetch(`https://pixabay.com/api/?key=${KEY}=${query}&image_type=photo&pretty=true`)
     .then(response => response.json())
     .then(data => {
-        // console.log(data.hits.length);
         if (data.hits.length==0) {
           generateErrorMessage();
           spinner.classList.add("d-none");
         } else {
-          console.log(data.hits);
           showImages(data.hits);
           headTitle.innerHTML=search.value;
           totalImageNumber.innerHTML=data.hits.length;
@@ -85,7 +83,6 @@ const selectItem = (event, img) => {
     sliders.splice(item,1);
     toggleSelectedItem(element,false);
   }
-  console.log(sliders.length);
   selectedImageNumber.innerHTML=sliders.length;
 }
 
@@ -130,7 +127,6 @@ const createSlider = () => {
     changeSlide(slideIndex);
   }, duration);
   document.getElementById('duration').value="";
-  // console.log(duration);
 }
 
 // change slider index 
@@ -169,8 +165,6 @@ search.addEventListener('keyup', function(event) {
 searchBtn.addEventListener('click', ()=> {
   document.querySelector('.main').style.display = 'none';
   clearInterval(timer);
-  // console.log(search);
-  console.log(search.value);
   getImages(search.value)
   sliders.length = 0;
 
@@ -210,7 +204,6 @@ let generateErrorMessage =()=>{
 
 //hide error message
 const hideErrorMessage=()=>{
-  // search.value=" ";
   errorAlertDiv.style.display="none";
   searchBtn.disabled = false;
 }
